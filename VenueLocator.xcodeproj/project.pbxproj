@@ -23,6 +23,8 @@
 		CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF2A1C6FC57C00728483 /* VLVenueCardPresenter.m */; };
 		CC4BFF301C6FFAEB00728483 /* VLSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */; };
 		CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF321C6FFB3300728483 /* VLVenueList.m */; };
+		CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF351C700EB200728483 /* VLAPIClient.m */; };
+		CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,11 @@
 		CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLSearchPresenter.m; sourceTree = "<group>"; };
 		CC4BFF311C6FFB3300728483 /* VLVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueList.h; sourceTree = "<group>"; };
 		CC4BFF321C6FFB3300728483 /* VLVenueList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueList.m; sourceTree = "<group>"; };
+		CC4BFF341C700EB200728483 /* VLAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLAPIClient.h; sourceTree = "<group>"; };
+		CC4BFF351C700EB200728483 /* VLAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLAPIClient.m; sourceTree = "<group>"; };
+		CC4BFF381C70B70000728483 /* VenueLocatorKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueLocatorKeys.h; sourceTree = SOURCE_ROOT; };
+		CC4BFF3A1C70BD7500728483 /* NSArray+VenueLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+VenueLocator.h"; sourceTree = "<group>"; };
+		CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+VenueLocator.m"; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +147,7 @@
 		CC4BFED61C6FA0D200728483 /* VenueLocator */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFF391C70BD4C00728483 /* Helpers */,
 				CC4BFF151C6FB01D00728483 /* Models */,
 				CC4BFF161C6FB01D00728483 /* Presenters */,
 				CC4BFF171C6FB01D00728483 /* ViewControllers */,
@@ -158,6 +166,7 @@
 		CC4BFED71C6FA0D200728483 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFF381C70B70000728483 /* VenueLocatorKeys.h */,
 				CC4BFED81C6FA0D200728483 /* main.m */,
 				CC4BFF2C1C6FF31000728483 /* VenueLocator.pch */,
 			);
@@ -193,6 +202,8 @@
 				CC4BFF201C6FBE6E00728483 /* VLVenue.m */,
 				CC4BFF311C6FFB3300728483 /* VLVenueList.h */,
 				CC4BFF321C6FFB3300728483 /* VLVenueList.m */,
+				CC4BFF341C700EB200728483 /* VLAPIClient.h */,
+				CC4BFF351C700EB200728483 /* VLAPIClient.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +238,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CC4BFF391C70BD4C00728483 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CC4BFF3A1C70BD7500728483 /* NSArray+VenueLocator.h */,
+				CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EAF7243A4E1F4566EFC4E096 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC4BFF011C6FA0D200728483 /* Build configuration list for PBXNativeTarget "VenueLocator" */;
 			buildPhases = (
+				CC4BFF371C70B52700728483 /* Create FourSquare Client ID/Key container */,
 				FE1BA8E3CB9CC3304A5FE65D /* Check Pods Manifest.lock */,
 				CC4BFED01C6FA0D200728483 /* Sources */,
 				CC4BFED11C6FA0D200728483 /* Frameworks */,
@@ -378,6 +399,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC4BFF371C70B52700728483 /* Create FourSquare Client ID/Key container */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create FourSquare Client ID/Key container";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch ${SRCROOT}/VenueLocatorKeys.h";
+		};
 		FE1BA8E3CB9CC3304A5FE65D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,9 +442,11 @@
 				CC4BFED91C6FA0D200728483 /* main.m in Sources */,
 				CC4BFF1E1C6FB01D00728483 /* VLVenueCardCell.m in Sources */,
 				CC4BFF301C6FFAEB00728483 /* VLSearchPresenter.m in Sources */,
+				CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */,
 				CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */,
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
 				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
+				CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

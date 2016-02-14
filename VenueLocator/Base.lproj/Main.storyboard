@@ -93,6 +93,9 @@
                             <constraint firstItem="hf3-SQ-c5N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wk1-EG-aiF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="PvK-TM-aMu" id="7BR-N0-TeH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

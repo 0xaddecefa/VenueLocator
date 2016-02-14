@@ -21,6 +21,8 @@
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     self = [super initWithDictionary:dictionary];
     if (self) {
+        self.name = dictionary[@"name"];
+        self.identifier = dictionary[@"id"];
     }
     
     return self;

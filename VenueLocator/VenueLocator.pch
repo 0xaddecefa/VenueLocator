@@ -9,6 +9,17 @@
 #ifndef VenueLocator_pch
 #define VenueLocator_pch
 
+#import "NSArray+VenueLocator.h"
+
+#import "VenueLocatorKeys.h"
+#ifndef CLIENT_ID
+#error Please define your Foursquare Client ID in the VenueLocatorKeys.h class
+#endif
+
+#ifndef CLIENT_SECRET
+#error Please define your Foursquare Client SECRET in the VenueLocatorKeys.h class
+#endif
+
 
 // ----------------
 // Utilities

@@ -19,6 +19,18 @@
 - (instancetype)initWithDictionary: (NSDictionary *)dictionary {
     self = [super initWithDictionary:dictionary];
     if (self) {
+        NSArray *venuesJSON = DYNAMIC_CAST(dictionary[@"venues"], NSArray);
+
+        self.items = [venuesJSON vl_map:^id(id obj) {
+            NSDictionary *dictionary = DYNAMIC_CAST(obj, NSDictionary);
+            if (dictionary) {
+                VLVenue *venue = [[VLVenue alloc] initWithDictionary:dictionary];
+                return venue;
+            }
+            
+            return nil;
+        }];
+        
     }
     
     return self;

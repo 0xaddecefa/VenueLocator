@@ -18,8 +18,19 @@ typedef NS_ENUM(NSUInteger, SearchPresenterState) {
     SearchPresenterStateError,
 };
 
+@class VLSearchPresenter;
+
+@protocol VLSearchPresenterDelegate <NSObject>
+@required
+- (void)reloadList;
+- (void)presentLoadingIndicator;
+- (void)hideLoadingIndicator;
+- (void)presentStateViewForState:(SearchPresenterState)state;
+@end
+
 @interface VLSearchPresenter : NSObject <VLPresenterProtocol>
 
+@property (nonatomic, weak) id<VLSearchPresenterDelegate> delegate;
 @property (nonatomic, readonly) SearchPresenterState state;
 
 - (void)search:(NSString *)query;

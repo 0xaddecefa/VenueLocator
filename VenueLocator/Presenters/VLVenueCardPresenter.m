@@ -7,6 +7,7 @@
 //
 
 #import "VLVenueCardPresenter.h"
+#import "VLVenue.h"
 
 @interface VLVenueCardPresenter()
 @property (nonatomic, readwrite, strong) UILabel *nameLabel;
@@ -16,7 +17,9 @@
 @implementation VLVenueCardPresenter
 
 - (void)setModel:(VLBaseModel *)model {
+    VLVenue *venue = DYNAMIC_CAST(model, VLVenue);
     
+    self.nameLabel.text = venue.name;
 }
 
 @end

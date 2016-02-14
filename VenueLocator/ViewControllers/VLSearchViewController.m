@@ -13,15 +13,17 @@
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
-@interface VLSearchViewController ()
+@interface VLSearchViewController () <VLSearchPresenterDelegate>
 @property (nonatomic, strong) VLSearchPresenter *presenter;
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
 
 @implementation VLSearchViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.presenter search:@"pizza"];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -50,5 +52,34 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     [cell.presenter setModel: [self.presenter venueAtIndex:indexPath.row]];
 }
 
+#pragma mark - lazy getters
+
+
+- (VLSearchPresenter *)presenter {
+    if (!_presenter) {
+        _presenter = [VLSearchPresenter new];
+        _presenter.delegate = self;
+    }
+    
+    return _presenter;
+}
+
+#pragma mark - VLSearchPresenterDelegate
+
+- (void)reloadList {
+    [self.collectionView reloadData];
+}
+
+- (void)presentLoadingIndicator {
+
+}
+
+- (void)hideLoadingIndicator {
+    
+}
+
+- (void)presentStateViewForState:(SearchPresenterState)state {
+    
+}
 
 @end
