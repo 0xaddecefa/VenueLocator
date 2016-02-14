@@ -8,6 +8,12 @@
 
 #import "VLBaseModel.h"
 
-@interface VLIcon : VLBaseModel
+typedef NS_ENUM(NSUInteger, VLIconSize) {
+    VLIconSizeSmall = 32,
+    VLIconSizeMedium = 64,
+    VLIconSizeBig = 88
+};
 
+@interface VLIcon : VLBaseModel
+- (NSURL *)urlForSize:(VLIconSize)iconSize andWithBackground:(BOOL)withBackground;
 @end

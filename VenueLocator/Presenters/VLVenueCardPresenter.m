@@ -9,6 +9,9 @@
 #import "VLVenueCardPresenter.h"
 #import "VLVenue.h"
 
+#import "Haneke.h"
+
+
 @interface VLVenueCardPresenter()
 @property (nonatomic, readwrite, strong) UILabel *nameLabel;
 @property (nonatomic, readwrite, strong) UITextView *addressTextView;
@@ -22,8 +25,13 @@
     VLVenue *venue = DYNAMIC_CAST(model, VLVenue);
     
     self.nameLabel.text = venue.name;
-    self.addressTextView.text = venue.name;
-    self.distanceLabel.text = venue.name;
+    self.addressTextView.text = [venue.location.formattedAddress componentsJoinedByString:@"\n"] ;
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@ m", @(venue.location.distance)];
+    
+    NSURL *iconURL = [venue.icon urlForSize:VLIconSizeBig andWithBackground:YES];
+    if (iconURL) {
+        [self.imageView hnk_setImageFromURL: iconURL];
+    }
 }
 
 @end

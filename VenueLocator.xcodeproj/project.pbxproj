@@ -25,6 +25,7 @@
 		CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF321C6FFB3300728483 /* VLVenueList.m */; };
 		CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF351C700EB200728483 /* VLAPIClient.m */; };
 		CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */; };
+		CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF3E1C710AC400728483 /* VLLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		CC4BFF381C70B70000728483 /* VenueLocatorKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueLocatorKeys.h; sourceTree = SOURCE_ROOT; };
 		CC4BFF3A1C70BD7500728483 /* NSArray+VenueLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+VenueLocator.h"; sourceTree = "<group>"; };
 		CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+VenueLocator.m"; sourceTree = "<group>"; };
+		CC4BFF3D1C710AC400728483 /* VLLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLLocation.h; sourceTree = "<group>"; };
+		CC4BFF3E1C710AC400728483 /* VLLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLLocation.m; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +207,8 @@
 				CC4BFF321C6FFB3300728483 /* VLVenueList.m */,
 				CC4BFF341C700EB200728483 /* VLAPIClient.h */,
 				CC4BFF351C700EB200728483 /* VLAPIClient.m */,
+				CC4BFF3D1C710AC400728483 /* VLLocation.h */,
+				CC4BFF3E1C710AC400728483 /* VLLocation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				TargetAttributes = {
 					CC4BFED31C6FA0D200728483 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = TH4FJMT8UL;
 					};
 					CC4BFEEC1C6FA0D200728483 = {
 						CreatedOnToolsVersion = 7.2;
@@ -445,6 +451,7 @@
 				CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */,
 				CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */,
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
+				CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */,
 				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
 				CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */,
 			);
@@ -588,11 +595,12 @@
 			baseConfigurationReference = 2351648B040D9AF10145B969 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = VenueLocator/VenueLocator.pch;
 				INFOPLIST_FILE = VenueLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nemtom.VenueLocator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autobutler.VenueLocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -602,11 +610,12 @@
 			baseConfigurationReference = E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = VenueLocator/VenueLocator.pch;
 				INFOPLIST_FILE = VenueLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nemtom.VenueLocator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autobutler.VenueLocator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

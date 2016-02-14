@@ -83,7 +83,7 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     
     width /= columns;
     
-    return CGSizeMake(width, 120);
+    return CGSizeMake(width, 160);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(    NSTimeInterval)duration {
@@ -126,5 +126,8 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     [self.presenter search:searchText];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
 
 @end

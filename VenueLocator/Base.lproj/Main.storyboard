@@ -53,7 +53,7 @@
                                                         <outlet property="nameLabel" destination="Fy8-kg-zAH" id="osO-yY-7u9"/>
                                                     </connections>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tj5-Zq-E95">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tj5-Zq-E95">
                                                     <rect key="frame" x="10" y="10" width="173" height="173"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Tj5-Zq-E95" secondAttribute="height" multiplier="1:1" id="GbF-g4-1Y9"/>

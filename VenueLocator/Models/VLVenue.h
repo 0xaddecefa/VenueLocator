@@ -8,10 +8,14 @@
 
 #import "VLBaseModel.h"
 #import "VLIcon.h"
+#import "VLLocation.h"
+
 
 @interface VLVenue : VLBaseModel
 
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) VLLocation *location;
 @property (nonatomic, readonly) VLIcon *icon;
+
 @end
