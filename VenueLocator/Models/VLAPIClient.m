@@ -12,6 +12,8 @@
 @interface VLAPIClient()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, strong) NSString *baseURL;
+
+@property (nonatomic, strong) NSURLSessionDataTask *currentSearchTask;
 @end
 
 @implementation VLAPIClient
@@ -41,7 +43,7 @@
 
 
 
-- (NSURLSessionDataTask *)searchForQuery: (NSString *)query
+- (void)searchForQuery: (NSString *)query
                                lattitude: (double)lattitude
                                longitude: (double)longitude
                                   radius: (double)radius
@@ -49,18 +51,25 @@
                            errorCallback: (void (^ __nullable)(NSError *))errorCallback
 {
     
+    //cancell the currently running search
+    [self.currentSearchTask cancel];
+    
     NSMutableDictionary *parameters = [VLAPIClient defaultParameters];
     [parameters addEntriesFromDictionary:@{
+                                           @"query"         : query ?: @"",
                                            @"intent"    : @"browse",
                                            @"ll"        : @"40.7,-74",
                                            @"radius"    : @"2500",
                                            @"v"         : @"20120610"
                                            }];
     NSString *url = [self urlStringForResource:@"venues/search"];
-    return [self.manager GET: url
+    
+    __block VLAPIClient *blockSelf = self;
+    self.currentSearchTask = [self.manager GET: url
                   parameters: parameters
                     progress: nil
                      success: ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         blockSelf.currentSearchTask = nil;
                          if (successCallback) {
                              NSDictionary *responseDictionary = DYNAMIC_CAST(responseObject, NSDictionary);
                              responseDictionary = responseDictionary[@"response"];
@@ -70,6 +79,7 @@
                          }
                      }
                      failure: ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         blockSelf.currentSearchTask = nil;
                          if (errorCallback) {
                              errorCallback(error);
                          }

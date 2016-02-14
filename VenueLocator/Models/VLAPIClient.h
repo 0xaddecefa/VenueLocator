@@ -14,7 +14,7 @@
 
 + (instancetype _Nullable)sharedInstance;
 
-- (NSURLSessionDataTask * _Nullable)searchForQuery: (NSString * _Nullable)query
+- (void)searchForQuery: (NSString * _Nullable)query
                                lattitude: (double)lattitude
                                longitude: (double)longitude
                                   radius: (double)radius

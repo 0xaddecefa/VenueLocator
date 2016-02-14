@@ -13,7 +13,7 @@
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
-@interface VLSearchViewController () <VLSearchPresenterDelegate>
+@interface VLSearchViewController () <VLSearchPresenterDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) VLSearchPresenter *presenter;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
@@ -22,8 +22,6 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self.presenter search:@"pizza"];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -81,5 +79,11 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 - (void)presentStateViewForState:(SearchPresenterState)state {
     
 }
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.presenter search:searchText];
+}
+
 
 @end
