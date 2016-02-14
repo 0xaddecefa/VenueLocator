@@ -15,9 +15,9 @@
 + (instancetype _Nullable)sharedInstance;
 
 - (void)searchForQuery: (NSString * _Nullable)query
-                               lattitude: (double)lattitude
-                               longitude: (double)longitude
-                                  radius: (double)radius
-                         successCallback: (void (^ __nullable)(VLVenueList * _Nullable))successCallback
-                           errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
+              latitude: (double)latitude
+             longitude: (double)longitude
+                radius: (double)radius
+       successCallback: (void (^ __nullable)(VLVenueList * _Nullable))successCallback
+         errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
 @end

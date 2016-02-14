@@ -41,14 +41,12 @@
     return self;
 }
 
-
-
 - (void)searchForQuery: (NSString *)query
-                               lattitude: (double)lattitude
-                               longitude: (double)longitude
-                                  radius: (double)radius
-                         successCallback: (void (^ __nullable)(VLVenueList *))successCallback
-                           errorCallback: (void (^ __nullable)(NSError *))errorCallback
+              latitude: (double)latitude
+             longitude: (double)longitude
+                radius: (double)radius
+       successCallback: (void (^ __nullable)(VLVenueList *))successCallback
+         errorCallback: (void (^ __nullable)(NSError *))errorCallback
 {
     
     //cancell the currently running search
@@ -58,8 +56,8 @@
     [parameters addEntriesFromDictionary:@{
                                            @"query"         : query ?: @"",
                                            @"intent"    : @"browse",
-                                           @"ll"        : @"40.7,-74",
-                                           @"radius"    : @"2500",
+                                           @"ll"        : [VLAPIClient llForLatitude:latitude andLongitude:longitude],
+                                           @"radius"    : @(radius),
                                            @"v"         : @"20120610"
                                            }];
     NSString *url = [self urlStringForResource:@"venues/search"];
@@ -102,5 +100,10 @@
                                             } mutableCopy];
     return defaultParams;
 }
+
++ (NSString *)llForLatitude:(double)latitude andLongitude:(double)longitude {
+    return [NSString stringWithFormat:@"%f,%f", latitude, longitude];
+}
+
 
 @end

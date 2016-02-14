@@ -9,6 +9,7 @@
 #import "VLSearchPresenter.h"
 #import "VLVenueList.h"
 #import "VLApiClient.h"
+#import "VLLocationManager.h"
 
 @interface VLSearchPresenter()
 
@@ -19,19 +20,26 @@
 @implementation VLSearchPresenter
 
 
-- (void)search:(NSString *)query {
-    if (self.state == SearchPresenterStateLoading) {
-    //cancel previous operation
-    }
-    // do the search
-    self.state = SearchPresenterStateLoading;
+- (instancetype) init {
+    self = [super init];
     
+    if (self) {
+        [[VLLocationManager sharedInstance] startUpdating];
+    }
+    
+    return self;
+}
+
+- (void)search:(NSString *)query {
+    self.state = SearchPresenterStateLoading;
+
+    CLLocationCoordinate2D userLocation = [VLLocationManager sharedInstance].latestUserLocation.coordinate;
     
     __block VLSearchPresenter * blockSelf = self;
     [[VLAPIClient sharedInstance] searchForQuery: query
-                                       lattitude: 0
-                                       longitude: 0
-                                          radius: 0
+                                        latitude: userLocation.latitude
+                                       longitude: userLocation.longitude
+                                          radius: 5000
                                  successCallback: ^(VLVenueList * _Nullable venueList) {
                                      blockSelf.model = venueList;
                                  } errorCallback: ^(NSError * _Nullable error) {

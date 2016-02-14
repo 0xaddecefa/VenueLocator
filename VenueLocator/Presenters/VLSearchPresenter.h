@@ -12,6 +12,7 @@
 
 typedef NS_ENUM(NSUInteger, SearchPresenterState) {
     SearchPresenterStateInitial,
+    SearchPresenterStateLocationDetermined,
     SearchPresenterStateLoading,
     SearchPresenterStateHasContent,
     SearchPresenterStateEmpty,
