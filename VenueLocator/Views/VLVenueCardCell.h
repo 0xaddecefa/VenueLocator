@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VLVenueCardPresenter.h"
 
 @interface VLVenueCardCell : UICollectionViewCell
+@property (nonatomic, strong) IBOutlet VLVenueCardPresenter *presenter;
+
+
 
 @end

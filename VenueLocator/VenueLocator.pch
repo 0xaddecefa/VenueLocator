@@ -1,0 +1,20 @@
+//
+//  VenueLocator.pch
+//  VenueLocator
+//
+//  Created by Tamas Nemeth on 14/02/16.
+//  Copyright © 2016 Tamas Nemeth. All rights reserved.
+//
+
+#ifndef VenueLocator_pch
+#define VenueLocator_pch
+
+
+// ----------------
+// Utilities
+// ----------------
+#define DYNAMIC_CAST(obj,class) ([(obj) isKindOfClass:(Class)NSClassFromString(@#class)] ? (class *)obj : NULL)
+
+
+
+#endif /* VenueLocator_pch */

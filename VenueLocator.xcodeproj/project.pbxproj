@@ -16,6 +16,12 @@
 		CC4BFEFD1C6FA0D200728483 /* VenueLocatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFEFC1C6FA0D200728483 /* VenueLocatorUITests.m */; };
 		CC4BFF1D1C6FB01D00728483 /* VLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF191C6FB01D00728483 /* VLSearchViewController.m */; };
 		CC4BFF1E1C6FB01D00728483 /* VLVenueCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF1C1C6FB01D00728483 /* VLVenueCardCell.m */; };
+		CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF201C6FBE6E00728483 /* VLVenue.m */; };
+		CC4BFF241C6FBE8300728483 /* VLIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF231C6FBE8300728483 /* VLIcon.m */; };
+		CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF261C6FBF5900728483 /* VLBaseModel.m */; };
+		CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF2A1C6FC57C00728483 /* VLVenueCardPresenter.m */; };
+		CC4BFF301C6FFAEB00728483 /* VLSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */; };
+		CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF321C6FFB3300728483 /* VLVenueList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,20 @@
 		CC4BFF191C6FB01D00728483 /* VLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLSearchViewController.m; sourceTree = "<group>"; };
 		CC4BFF1B1C6FB01D00728483 /* VLVenueCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueCardCell.h; sourceTree = "<group>"; };
 		CC4BFF1C1C6FB01D00728483 /* VLVenueCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueCardCell.m; sourceTree = "<group>"; };
+		CC4BFF1F1C6FBE6E00728483 /* VLVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenue.h; sourceTree = "<group>"; };
+		CC4BFF201C6FBE6E00728483 /* VLVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenue.m; sourceTree = "<group>"; };
+		CC4BFF221C6FBE8300728483 /* VLIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLIcon.h; sourceTree = "<group>"; };
+		CC4BFF231C6FBE8300728483 /* VLIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLIcon.m; sourceTree = "<group>"; };
+		CC4BFF251C6FBF5900728483 /* VLBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLBaseModel.h; sourceTree = "<group>"; };
+		CC4BFF261C6FBF5900728483 /* VLBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLBaseModel.m; sourceTree = "<group>"; };
+		CC4BFF281C6FC3F100728483 /* VLPresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLPresenterProtocol.h; sourceTree = "<group>"; };
+		CC4BFF291C6FC57C00728483 /* VLVenueCardPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueCardPresenter.h; sourceTree = "<group>"; };
+		CC4BFF2A1C6FC57C00728483 /* VLVenueCardPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueCardPresenter.m; sourceTree = "<group>"; };
+		CC4BFF2C1C6FF31000728483 /* VenueLocator.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueLocator.pch; sourceTree = "<group>"; };
+		CC4BFF2E1C6FFAEB00728483 /* VLSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLSearchPresenter.h; sourceTree = "<group>"; };
+		CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLSearchPresenter.m; sourceTree = "<group>"; };
+		CC4BFF311C6FFB3300728483 /* VLVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueList.h; sourceTree = "<group>"; };
+		CC4BFF321C6FFB3300728483 /* VLVenueList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				CC4BFED81C6FA0D200728483 /* main.m */,
+				CC4BFF2C1C6FF31000728483 /* VenueLocator.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,6 +169,14 @@
 		CC4BFF151C6FB01D00728483 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFF251C6FBF5900728483 /* VLBaseModel.h */,
+				CC4BFF261C6FBF5900728483 /* VLBaseModel.m */,
+				CC4BFF221C6FBE8300728483 /* VLIcon.h */,
+				CC4BFF231C6FBE8300728483 /* VLIcon.m */,
+				CC4BFF1F1C6FBE6E00728483 /* VLVenue.h */,
+				CC4BFF201C6FBE6E00728483 /* VLVenue.m */,
+				CC4BFF311C6FFB3300728483 /* VLVenueList.h */,
+				CC4BFF321C6FFB3300728483 /* VLVenueList.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +184,11 @@
 		CC4BFF161C6FB01D00728483 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				CC4BFF281C6FC3F100728483 /* VLPresenterProtocol.h */,
+				CC4BFF291C6FC57C00728483 /* VLVenueCardPresenter.h */,
+				CC4BFF2A1C6FC57C00728483 /* VLVenueCardPresenter.m */,
+				CC4BFF2E1C6FFAEB00728483 /* VLSearchPresenter.h */,
+				CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -307,10 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC4BFF241C6FBE8300728483 /* VLIcon.m in Sources */,
 				CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */,
+				CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */,
 				CC4BFF1D1C6FB01D00728483 /* VLSearchViewController.m in Sources */,
 				CC4BFED91C6FA0D200728483 /* main.m in Sources */,
 				CC4BFF1E1C6FB01D00728483 /* VLVenueCardCell.m in Sources */,
+				CC4BFF301C6FFAEB00728483 /* VLSearchPresenter.m in Sources */,
+				CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */,
+				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
+				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +491,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = VenueLocator/VenueLocator.pch;
 				INFOPLIST_FILE = VenueLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemtom.VenueLocator;
@@ -462,6 +504,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = VenueLocator/VenueLocator.pch;
 				INFOPLIST_FILE = VenueLocator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemtom.VenueLocator;

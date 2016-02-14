@@ -7,11 +7,14 @@
 //
 
 #import "VLSearchViewController.h"
+#import "VLSearchPresenter.h"
+
+#import "VLVenueCardCell.h"
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
 @interface VLSearchViewController ()
-
+@property (nonatomic, strong) VLSearchPresenter *presenter;
 @end
 
 @implementation VLSearchViewController
@@ -25,12 +28,27 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
 - (NSInteger)collectionView: (UICollectionView *)collectionView
      numberOfItemsInSection: (NSInteger)section {
-    return 20;
+    if (self.presenter.state == SearchPresenterStateHasContent) {
+        return [self.presenter numberOfVenues];
+    }
+    
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [collectionView dequeueReusableCellWithReuseIdentifier: kCellReuseIdentifier
-                                                     forIndexPath: indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: kCellReuseIdentifier
+                                                                           forIndexPath: indexPath];
+    
+    VLVenueCardCell *venueCardCell = DYNAMIC_CAST(cell, VLVenueCardCell);
+    [self configureCell:venueCardCell forRowAtIndexPath:indexPath];
+
+    return cell;
 }
+
+- (void)configureCell: (VLVenueCardCell *)cell
+    forRowAtIndexPath: (NSIndexPath *)indexPath {
+    [cell.presenter setModel: [self.presenter venueAtIndex:indexPath.row]];
+}
+
 
 @end
