@@ -11,7 +11,9 @@
 
 @interface VLVenueCardPresenter : UIView <VLPresenterProtocol>
 
-@property (nonatomic, readonly) IBOutlet UILabel *nameLabel;
 @property (nonatomic, readonly) IBOutlet UIImageView *imageView;
+@property (nonatomic, readonly) IBOutlet UILabel *nameLabel;
+@property (nonatomic, readonly) IBOutlet UITextView *addressTextView;
+@property (nonatomic, readonly) IBOutlet UILabel *distanceLabel;
 
 @end

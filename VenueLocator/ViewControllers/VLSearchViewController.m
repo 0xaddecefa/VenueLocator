@@ -50,6 +50,47 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     [cell.presenter setModel: [self.presenter venueAtIndex:indexPath.row]];
 }
 
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    UICollectionViewFlowLayout *flowLayout = DYNAMIC_CAST(collectionViewLayout, UICollectionViewFlowLayout);
+    
+    CGFloat width = collectionView.bounds.size.width;
+    width -= flowLayout.sectionInset.left + flowLayout.sectionInset.right;
+    
+    NSUInteger columns = 0;
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            columns = 4;
+        } else {
+            columns = 2;
+        }
+    } else {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            columns = 2;
+        } else {
+            columns = 1;
+        }
+    }
+    
+    if (columns > 1) {
+        width -= (columns - 1) * flowLayout.minimumInteritemSpacing;
+    }
+    
+    width /= columns;
+    
+    return CGSizeMake(width, 120);
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(    NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.collectionView reloadData];
+}
+
 #pragma mark - lazy getters
 
 

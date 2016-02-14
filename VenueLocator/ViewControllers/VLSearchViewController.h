@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VLSearchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface VLSearchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 
 @end
