@@ -28,6 +28,8 @@
 		CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF3E1C710AC400728483 /* VLLocation.m */; };
 		CC4BFF421C711B2700728483 /* VLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF411C711B2700728483 /* VLLocationManager.m */; };
 		CC4BFF441C7133CB00728483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4BFF431C7133CB00728483 /* MapKit.framework */; };
+		CC4BFF471C7142B400728483 /* VLVenueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF461C7142B400728483 /* VLVenueDetailViewController.m */; };
+		CC4BFF4A1C71486800728483 /* VLVenueDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		CC4BFF401C711B2700728483 /* VLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLLocationManager.h; sourceTree = "<group>"; };
 		CC4BFF411C711B2700728483 /* VLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLLocationManager.m; sourceTree = "<group>"; };
 		CC4BFF431C7133CB00728483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CC4BFF451C7142B400728483 /* VLVenueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailViewController.h; sourceTree = "<group>"; };
+		CC4BFF461C7142B400728483 /* VLVenueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailViewController.m; sourceTree = "<group>"; };
+		CC4BFF481C71486800728483 /* VLVenueDetailPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailPresenter.h; sourceTree = "<group>"; };
+		CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailPresenter.m; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +233,8 @@
 				CC4BFF2A1C6FC57C00728483 /* VLVenueCardPresenter.m */,
 				CC4BFF2E1C6FFAEB00728483 /* VLSearchPresenter.h */,
 				CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */,
+				CC4BFF481C71486800728483 /* VLVenueDetailPresenter.h */,
+				CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -236,6 +244,8 @@
 			children = (
 				CC4BFF181C6FB01D00728483 /* VLSearchViewController.h */,
 				CC4BFF191C6FB01D00728483 /* VLSearchViewController.m */,
+				CC4BFF451C7142B400728483 /* VLVenueDetailViewController.h */,
+				CC4BFF461C7142B400728483 /* VLVenueDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -458,6 +468,7 @@
 				CC4BFF241C6FBE8300728483 /* VLIcon.m in Sources */,
 				CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */,
 				CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */,
+				CC4BFF4A1C71486800728483 /* VLVenueDetailPresenter.m in Sources */,
 				CC4BFF1D1C6FB01D00728483 /* VLSearchViewController.m in Sources */,
 				CC4BFED91C6FA0D200728483 /* main.m in Sources */,
 				CC4BFF1E1C6FB01D00728483 /* VLVenueCardCell.m in Sources */,
@@ -467,6 +478,7 @@
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
 				CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */,
 				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
+				CC4BFF471C7142B400728483 /* VLVenueDetailViewController.m in Sources */,
 				CC4BFF421C711B2700728483 /* VLLocationManager.m in Sources */,
 				CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */,
 			);

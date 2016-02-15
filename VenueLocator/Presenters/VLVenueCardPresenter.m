@@ -17,21 +17,27 @@
 @property (nonatomic, readwrite, strong) UITextView *addressTextView;
 @property (nonatomic, readwrite, strong) UILabel *distanceLabel;
 @property (nonatomic, readwrite, strong) UIImageView *imageView;
+
+@property (nonatomic, strong) VLVenue *venue;
 @end
 
 @implementation VLVenueCardPresenter
 
 - (void)setModel:(VLBaseModel *)model {
-    VLVenue *venue = DYNAMIC_CAST(model, VLVenue);
+    self.venue = DYNAMIC_CAST(model, VLVenue);
     
-    self.nameLabel.text = venue.name;
-    self.addressTextView.text = [venue.location.formattedAddress componentsJoinedByString:@"\n"] ;
-    self.distanceLabel.text = [NSString stringWithFormat:@"%@ m", @(venue.location.distance)];
+    self.nameLabel.text = self.venue.name;
+    self.addressTextView.text = [self.venue.location.formattedAddress componentsJoinedByString:@"\n"] ;
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@ m", @(self.venue.location.distance)];
     
-    NSURL *iconURL = [venue.icon urlForSize:VLIconSizeBig andWithBackground:YES];
+    NSURL *iconURL = [self.venue.icon urlForSize:VLIconSizeBig andWithBackground:YES];
     if (iconURL) {
         [self.imageView hnk_setImageFromURL: iconURL];
     }
+}
+
+- (VLBaseModel *)getModel {
+    return self.venue;
 }
 
 @end

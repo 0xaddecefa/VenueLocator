@@ -9,29 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "VLPresenterProtocol.h"
 #import "VLVenue.h"
-
-typedef NS_ENUM(NSUInteger, SearchPresenterState) {
-    SearchPresenterStateInitial,
-    SearchPresenterStateLocationDetermined,
-    SearchPresenterStateLoading,
-    SearchPresenterStateHasContent,
-    SearchPresenterStateEmpty,
-    SearchPresenterStateError,
-};
-
-@class VLSearchPresenter;
-
-@protocol VLSearchPresenterDelegate <NSObject>
-@required
-- (void)reloadList;
-- (void)presentLoadingIndicator;
-- (void)hideLoadingIndicator;
-- (void)presentStateViewForState:(SearchPresenterState)state;
-@end
+#import "VLVenueCardCell.h"
+#import "VLVenueDetailViewController.h"
 
 @interface VLSearchPresenter : NSObject <VLPresenterProtocol>
 
-@property (nonatomic, weak) id<VLSearchPresenterDelegate> delegate;
+@property (nonatomic, weak) id<VLPresenterDelegate> delegate;
 @property (nonatomic, readonly) SearchPresenterState state;
 
 - (void)search:(NSString *)query;
@@ -39,5 +22,6 @@ typedef NS_ENUM(NSUInteger, SearchPresenterState) {
 - (NSUInteger)numberOfVenues;
 - (VLVenue *)venueAtIndex:(NSUInteger)index;
 
-
+- (void)prepareSegueToDetailViewController: (UIViewController *)destinationViewController
+                             fromVenueCell: (VLVenueCardCell *)venueCell;
 @end

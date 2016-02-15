@@ -13,7 +13,7 @@
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
-@interface VLSearchViewController () <VLSearchPresenterDelegate, UISearchBarDelegate>
+@interface VLSearchViewController () <VLPresenterDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) VLSearchPresenter *presenter;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
@@ -91,6 +91,15 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     [self.collectionView reloadData];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    VLVenueCardCell *senderCell = DYNAMIC_CAST(sender, VLVenueCardCell);
+
+    [self.presenter prepareSegueToDetailViewController:segue.destinationViewController fromVenueCell:senderCell];
+    
+
+}
+
 #pragma mark - lazy getters
 
 
@@ -103,9 +112,9 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     return _presenter;
 }
 
-#pragma mark - VLSearchPresenterDelegate
+#pragma mark - VLPresenterDelegate
 
-- (void)reloadList {
+- (void)refresh {
     [self.collectionView reloadData];
 }
 

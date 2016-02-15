@@ -51,6 +51,10 @@
     self.state = self.venueList.items.count > 0 ? SearchPresenterStateHasContent : SearchPresenterStateEmpty;
 }
 
+- (VLBaseModel *)getModel {
+    return self.venueList;
+}
+
 - (void)setState:(SearchPresenterState)state {
     if (state != self.state) {
         _state = state;
@@ -61,7 +65,7 @@
                 [self.delegate presentStateViewForState:_state];
                 //NOTE: continue without break to reload the empty collection
             case SearchPresenterStateHasContent:
-                [self.delegate reloadList];
+                [self.delegate refresh];
                 break;
                 
             case SearchPresenterStateError:
@@ -85,5 +89,12 @@
     return nil;
 }
 
+#pragma mark - Navigation
+
+- (void)prepareSegueToDetailViewController: (UIViewController *)destinationViewController
+                             fromVenueCell: (VLVenueCardCell *)venueCell {
+    VLVenueDetailViewController *detailViewController = DYNAMIC_CAST(destinationViewController, VLVenueDetailViewController);
+    [detailViewController.presenter setModel: DYNAMIC_CAST([venueCell.presenter getModel], VLVenue)];
+}
 
 @end
