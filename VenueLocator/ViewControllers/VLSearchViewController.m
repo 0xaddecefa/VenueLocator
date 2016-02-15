@@ -17,6 +17,8 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 @property (nonatomic, strong) VLSearchPresenter *presenter;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *collectionViewBottomContraint;
+
+@property (nonatomic, assign) CGFloat animationDelay;
 @end
 
 @implementation VLSearchViewController
@@ -45,10 +47,37 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     
     self.collectionViewBottomContraint.constant = 5 + (self.view.bounds.size.height - endFrame.origin.y);
     
-    [UIView animateWithDuration:animationDuration animations:^{
-        [self.view layoutIfNeeded];
+
+    [UIView animateWithDuration: animationDuration
+                          delay: self.animationDelay
+                        options: UIViewAnimationOptionBeginFromCurrentState
+                     animations: ^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         [self.collectionView.collectionViewLayout invalidateLayout];
+                     }];
+}
+
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        self.animationDelay = [context transitionDuration];
+    }
+                                 completion: ^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        self.animationDelay = 0.0f;
     }];
     
+    [self.collectionView.collectionViewLayout invalidateLayout];
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    VLVenueCardCell *senderCell = DYNAMIC_CAST(sender, VLVenueCardCell);
+    
+    [self.presenter prepareSegueToDetailViewController:segue.destinationViewController fromVenueCell:senderCell];
 }
 
 
@@ -114,19 +143,10 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     return CGSizeMake(width, 160);
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(    NSTimeInterval)duration {
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    [self.collectionView reloadData];
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    VLVenueCardCell *senderCell = DYNAMIC_CAST(sender, VLVenueCardCell);
-
-    [self.presenter prepareSegueToDetailViewController:segue.destinationViewController fromVenueCell:senderCell];
-    
-
-}
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(    NSTimeInterval)duration {
+//    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+//    [self.collectionView reloadData];
+//}
 
 #pragma mark - lazy getters
 
