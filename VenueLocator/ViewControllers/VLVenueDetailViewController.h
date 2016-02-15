@@ -11,6 +11,6 @@
 #import "VLVenueDetailPresenter.h"
 
 
-@interface VLVenueDetailViewController : UIViewController
+@interface VLVenueDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, readonly) VLVenueDetailPresenter *presenter;
 @end

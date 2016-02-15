@@ -30,6 +30,13 @@
 		CC4BFF441C7133CB00728483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4BFF431C7133CB00728483 /* MapKit.framework */; };
 		CC4BFF471C7142B400728483 /* VLVenueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF461C7142B400728483 /* VLVenueDetailViewController.m */; };
 		CC4BFF4A1C71486800728483 /* VLVenueDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */; };
+		CC761B6C1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B6B1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m */; };
+		CC761B6F1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B6E1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m */; };
+		CC761B721C71584C00613EDC /* VLVenueDetailMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B711C71584C00613EDC /* VLVenueDetailMapTableViewCell.m */; };
+		CC761B751C7159F600613EDC /* VLCompleteVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B741C7159F600613EDC /* VLCompleteVenue.m */; };
+		CC761B781C716A2500613EDC /* VLVenueDetailInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B771C716A2500613EDC /* VLVenueDetailInfoPresenter.m */; };
+		CC761B7B1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */; };
+		CC761B7E1C716A5100613EDC /* VLVenueDetailMapPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,20 @@
 		CC4BFF461C7142B400728483 /* VLVenueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailViewController.m; sourceTree = "<group>"; };
 		CC4BFF481C71486800728483 /* VLVenueDetailPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailPresenter.h; sourceTree = "<group>"; };
 		CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailPresenter.m; sourceTree = "<group>"; };
+		CC761B6A1C71582100613EDC /* VLVenueDetailInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailInfoTableViewCell.h; sourceTree = "<group>"; };
+		CC761B6B1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailInfoTableViewCell.m; sourceTree = "<group>"; };
+		CC761B6D1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		CC761B6E1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		CC761B701C71584C00613EDC /* VLVenueDetailMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailMapTableViewCell.h; sourceTree = "<group>"; };
+		CC761B711C71584C00613EDC /* VLVenueDetailMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailMapTableViewCell.m; sourceTree = "<group>"; };
+		CC761B731C7159F600613EDC /* VLCompleteVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCompleteVenue.h; sourceTree = "<group>"; };
+		CC761B741C7159F600613EDC /* VLCompleteVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLCompleteVenue.m; sourceTree = "<group>"; };
+		CC761B761C716A2500613EDC /* VLVenueDetailInfoPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailInfoPresenter.h; sourceTree = "<group>"; };
+		CC761B771C716A2500613EDC /* VLVenueDetailInfoPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailInfoPresenter.m; sourceTree = "<group>"; };
+		CC761B791C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailDescriptionPresenter.h; sourceTree = "<group>"; };
+		CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailDescriptionPresenter.m; sourceTree = "<group>"; };
+		CC761B7C1C716A5100613EDC /* VLVenueDetailMapPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailMapPresenter.h; sourceTree = "<group>"; };
+		CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailMapPresenter.m; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,18 +230,20 @@
 		CC4BFF151C6FB01D00728483 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC4BFF251C6FBF5900728483 /* VLBaseModel.h */,
-				CC4BFF261C6FBF5900728483 /* VLBaseModel.m */,
-				CC4BFF221C6FBE8300728483 /* VLIcon.h */,
-				CC4BFF231C6FBE8300728483 /* VLIcon.m */,
-				CC4BFF1F1C6FBE6E00728483 /* VLVenue.h */,
-				CC4BFF201C6FBE6E00728483 /* VLVenue.m */,
-				CC4BFF311C6FFB3300728483 /* VLVenueList.h */,
-				CC4BFF321C6FFB3300728483 /* VLVenueList.m */,
 				CC4BFF341C700EB200728483 /* VLAPIClient.h */,
 				CC4BFF351C700EB200728483 /* VLAPIClient.m */,
+				CC4BFF251C6FBF5900728483 /* VLBaseModel.h */,
+				CC4BFF261C6FBF5900728483 /* VLBaseModel.m */,
+				CC4BFF311C6FFB3300728483 /* VLVenueList.h */,
+				CC4BFF321C6FFB3300728483 /* VLVenueList.m */,
+				CC4BFF1F1C6FBE6E00728483 /* VLVenue.h */,
+				CC4BFF201C6FBE6E00728483 /* VLVenue.m */,
+				CC761B731C7159F600613EDC /* VLCompleteVenue.h */,
+				CC761B741C7159F600613EDC /* VLCompleteVenue.m */,
 				CC4BFF3D1C710AC400728483 /* VLLocation.h */,
 				CC4BFF3E1C710AC400728483 /* VLLocation.m */,
+				CC4BFF221C6FBE8300728483 /* VLIcon.h */,
+				CC4BFF231C6FBE8300728483 /* VLIcon.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +258,12 @@
 				CC4BFF2F1C6FFAEB00728483 /* VLSearchPresenter.m */,
 				CC4BFF481C71486800728483 /* VLVenueDetailPresenter.h */,
 				CC4BFF491C71486800728483 /* VLVenueDetailPresenter.m */,
+				CC761B761C716A2500613EDC /* VLVenueDetailInfoPresenter.h */,
+				CC761B771C716A2500613EDC /* VLVenueDetailInfoPresenter.m */,
+				CC761B791C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.h */,
+				CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */,
+				CC761B7C1C716A5100613EDC /* VLVenueDetailMapPresenter.h */,
+				CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -255,6 +284,12 @@
 			children = (
 				CC4BFF1B1C6FB01D00728483 /* VLVenueCardCell.h */,
 				CC4BFF1C1C6FB01D00728483 /* VLVenueCardCell.m */,
+				CC761B6A1C71582100613EDC /* VLVenueDetailInfoTableViewCell.h */,
+				CC761B6B1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m */,
+				CC761B6D1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.h */,
+				CC761B6E1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m */,
+				CC761B701C71584C00613EDC /* VLVenueDetailMapTableViewCell.h */,
+				CC761B711C71584C00613EDC /* VLVenueDetailMapTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,17 +502,24 @@
 			files = (
 				CC4BFF241C6FBE8300728483 /* VLIcon.m in Sources */,
 				CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */,
+				CC761B751C7159F600613EDC /* VLCompleteVenue.m in Sources */,
 				CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */,
+				CC761B6F1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m in Sources */,
 				CC4BFF4A1C71486800728483 /* VLVenueDetailPresenter.m in Sources */,
 				CC4BFF1D1C6FB01D00728483 /* VLSearchViewController.m in Sources */,
+				CC761B7E1C716A5100613EDC /* VLVenueDetailMapPresenter.m in Sources */,
+				CC761B721C71584C00613EDC /* VLVenueDetailMapTableViewCell.m in Sources */,
 				CC4BFED91C6FA0D200728483 /* main.m in Sources */,
 				CC4BFF1E1C6FB01D00728483 /* VLVenueCardCell.m in Sources */,
 				CC4BFF301C6FFAEB00728483 /* VLSearchPresenter.m in Sources */,
 				CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */,
 				CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */,
+				CC761B6C1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m in Sources */,
+				CC761B781C716A2500613EDC /* VLVenueDetailInfoPresenter.m in Sources */,
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
 				CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */,
 				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
+				CC761B7B1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m in Sources */,
 				CC4BFF471C7142B400728483 /* VLVenueDetailViewController.m in Sources */,
 				CC4BFF421C711B2700728483 /* VLLocationManager.m in Sources */,
 				CC4BFF3C1C70BD7500728483 /* NSArray+VenueLocator.m in Sources */,

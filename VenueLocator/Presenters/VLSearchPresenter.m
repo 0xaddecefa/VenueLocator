@@ -39,7 +39,7 @@
     [[VLAPIClient sharedInstance] searchForQuery: query
                                         latitude: userLocation.latitude
                                        longitude: userLocation.longitude
-                                          radius: 5000
+                                          radius: 30000
                                  successCallback: ^(VLVenueList * _Nullable venueList) {
                                      blockSelf.model = venueList;
                                  } errorCallback: ^(NSError * _Nullable error) {

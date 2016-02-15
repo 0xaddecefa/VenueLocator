@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSArray *formattedAddress;
 @property (nonatomic, assign) NSUInteger distance;
-
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @end
 
 @implementation VLLocation
@@ -22,6 +22,11 @@
     if (self) {
         self.formattedAddress = DYNAMIC_CAST(dictionary[@"formattedAddress"], NSArray);
         self.distance = [DYNAMIC_CAST(dictionary[@"distance"], NSNumber) unsignedIntegerValue];
+        
+        CLLocationDegrees longitude = [DYNAMIC_CAST(dictionary[@"lng"], NSNumber) doubleValue];
+        CLLocationDegrees latitude = [DYNAMIC_CAST(dictionary[@"lat"], NSNumber) doubleValue];
+        self.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+
     }
     return self;
 }

@@ -58,7 +58,6 @@
                                            @"intent"    : @"browse",
                                            @"ll"        : [VLAPIClient llForLatitude:latitude andLongitude:longitude],
                                            @"radius"    : @(radius),
-                                           @"v"         : @"20120610"
                                            }];
     NSString *url = [self urlStringForResource:@"venues/search"];
     
@@ -85,6 +84,34 @@
 }
 
 
+- (void)loadVenueWithID: (NSString *)venueID
+        successCallback: (void (^ __nullable)(VLCompleteVenue * _Nullable))successCallback
+          errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback {
+    NSMutableDictionary *parameters = [VLAPIClient defaultParameters];
+
+    NSString *url = [self urlStringForResource:[NSString stringWithFormat:@"venues/%@", venueID?:@""]];
+    
+    [self.manager GET: url
+           parameters: parameters
+             progress: nil
+              success: ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  if (successCallback) {
+                      NSDictionary *responseDictionary = DYNAMIC_CAST(responseObject, NSDictionary);
+                      responseDictionary = DYNAMIC_CAST(responseDictionary[@"response"], NSDictionary);
+                      responseDictionary = DYNAMIC_CAST(responseDictionary[@"venue"], NSDictionary);
+
+                      VLCompleteVenue *venue = [[VLCompleteVenue alloc] initWithDictionary:responseDictionary];
+                      successCallback(venue);
+                  }
+              }
+              failure: ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  if (errorCallback) {
+                      errorCallback(error);
+                  }
+              }];
+}
+
+
 - (NSString *)urlStringForResource:(NSString *)resource {
     return [NSString stringWithFormat:@"%@%@", self.baseURL, resource];
 }
@@ -97,6 +124,7 @@
     NSMutableDictionary *defaultParams = [@{
                                             @"client_id" : CLIENT_ID,
                                             @"client_secret" : CLIENT_SECRET,
+                                            @"v"         : @"20120610",
                                             } mutableCopy];
     return defaultParams;
 }

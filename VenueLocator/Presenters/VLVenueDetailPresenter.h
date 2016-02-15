@@ -11,4 +11,11 @@
 
 @interface VLVenueDetailPresenter : NSObject <VLPresenterProtocol>
 
+@property (nonatomic, weak) id<VLPresenterDelegate> delegate;
+
+- (NSUInteger)numberOfRows;
+- (NSString *)reuseIdentifierForIndexPath:(NSIndexPath *)indexPath;
+
+- (void)decorateDetailPresenterWithPresenter:(id<VLPresenterProtocol>)presenter forIndexPath:(NSIndexPath *)indexPath;
+
 @end

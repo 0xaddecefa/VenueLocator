@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "VLVenueList.h"
+#import "VLCompleteVenue.h"
 
 @interface VLAPIClient : NSObject
 
@@ -20,4 +21,9 @@
                 radius: (double)radius
        successCallback: (void (^ __nullable)(VLVenueList * _Nullable))successCallback
          errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
+
+- (void)loadVenueWithID: (NSString * __nullable)venueID
+        successCallback: (void (^ __nullable)(VLCompleteVenue * _Nullable))successCallback
+          errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
+
 @end
