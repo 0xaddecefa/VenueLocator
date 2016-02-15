@@ -49,8 +49,10 @@
          errorCallback: (void (^ __nullable)(NSError *))errorCallback
 {
     
-    //cancell the currently running search
+    //cancel the currently running search
     [self.currentSearchTask cancel];
+    
+    query = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
     NSMutableDictionary *parameters = [VLAPIClient defaultParameters];
     [parameters addEntriesFromDictionary:@{
