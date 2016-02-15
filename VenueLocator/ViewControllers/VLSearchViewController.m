@@ -122,7 +122,7 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     NSUInteger columns = 0;
     if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            columns = 4;
+            columns = 3;
         } else {
             columns = 2;
         }
