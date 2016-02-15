@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C36B08946500F6DC007A69F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 904CEEBC3DE1475FE14A0222 /* libPods.a */; };
+		CC11FD551C718A2400CB4073 /* VLDistanceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11FD541C718A2400CB4073 /* VLDistanceAnnotation.m */; };
+		CC11FD581C718E3400CB4073 /* VLTaggedPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */; };
 		CC4BFED91C6FA0D200728483 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFED81C6FA0D200728483 /* main.m */; };
 		CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFEDB1C6FA0D200728483 /* AppDelegate.m */; };
 		CC4BFEE21C6FA0D200728483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4BFEE01C6FA0D200728483 /* Main.storyboard */; };
@@ -59,6 +61,10 @@
 /* Begin PBXFileReference section */
 		2351648B040D9AF10145B969 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		904CEEBC3DE1475FE14A0222 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC11FD531C718A2400CB4073 /* VLDistanceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDistanceAnnotation.h; sourceTree = "<group>"; };
+		CC11FD541C718A2400CB4073 /* VLDistanceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDistanceAnnotation.m; sourceTree = "<group>"; };
+		CC11FD561C718E3400CB4073 /* VLTaggedPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTaggedPointAnnotation.h; sourceTree = "<group>"; };
+		CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTaggedPointAnnotation.m; sourceTree = "<group>"; };
 		CC4BFED41C6FA0D200728483 /* VenueLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4BFED81C6FA0D200728483 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC4BFEDA1C6FA0D200728483 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +307,10 @@
 				CC4BFF3B1C70BD7500728483 /* NSArray+VenueLocator.m */,
 				CC4BFF401C711B2700728483 /* VLLocationManager.h */,
 				CC4BFF411C711B2700728483 /* VLLocationManager.m */,
+				CC11FD531C718A2400CB4073 /* VLDistanceAnnotation.h */,
+				CC11FD541C718A2400CB4073 /* VLDistanceAnnotation.m */,
+				CC11FD561C718E3400CB4073 /* VLTaggedPointAnnotation.h */,
+				CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -503,6 +513,7 @@
 				CC4BFF241C6FBE8300728483 /* VLIcon.m in Sources */,
 				CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */,
 				CC761B751C7159F600613EDC /* VLCompleteVenue.m in Sources */,
+				CC11FD581C718E3400CB4073 /* VLTaggedPointAnnotation.m in Sources */,
 				CC4BFF2B1C6FC57C00728483 /* VLVenueCardPresenter.m in Sources */,
 				CC761B6F1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m in Sources */,
 				CC4BFF4A1C71486800728483 /* VLVenueDetailPresenter.m in Sources */,
@@ -517,6 +528,7 @@
 				CC761B6C1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m in Sources */,
 				CC761B781C716A2500613EDC /* VLVenueDetailInfoPresenter.m in Sources */,
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
+				CC11FD551C718A2400CB4073 /* VLDistanceAnnotation.m in Sources */,
 				CC4BFF3F1C710AC400728483 /* VLLocation.m in Sources */,
 				CC4BFF331C6FFB3300728483 /* VLVenueList.m in Sources */,
 				CC761B7B1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m in Sources */,
