@@ -23,6 +23,8 @@
 
 @implementation VLVenueCardPresenter
 
+
+
 - (void)setModel:(VLBaseModel *)model {
     self.venue = DYNAMIC_CAST(model, VLVenue);
     
@@ -38,6 +40,17 @@
 
 - (VLBaseModel *)getModel {
     return self.venue;
+}
+
+
+- (instancetype)initForTest {
+    self = [self init];
+    if (self) {
+        self.nameLabel = [UILabel new];
+        self.addressTextView = [UITextView new];
+        self.distanceLabel = [UILabel new];
+    }
+    return self;
 }
 
 @end

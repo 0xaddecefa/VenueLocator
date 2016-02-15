@@ -10,6 +10,7 @@
 		3C36B08946500F6DC007A69F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 904CEEBC3DE1475FE14A0222 /* libPods.a */; };
 		CC11FD551C718A2400CB4073 /* VLDistanceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11FD541C718A2400CB4073 /* VLDistanceAnnotation.m */; };
 		CC11FD581C718E3400CB4073 /* VLTaggedPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */; };
+		CC11FD5A1C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11FD591C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m */; };
 		CC4BFED91C6FA0D200728483 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFED81C6FA0D200728483 /* main.m */; };
 		CC4BFEDC1C6FA0D200728483 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BFEDB1C6FA0D200728483 /* AppDelegate.m */; };
 		CC4BFEE21C6FA0D200728483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4BFEE01C6FA0D200728483 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		CC11FD541C718A2400CB4073 /* VLDistanceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDistanceAnnotation.m; sourceTree = "<group>"; };
 		CC11FD561C718E3400CB4073 /* VLTaggedPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLTaggedPointAnnotation.h; sourceTree = "<group>"; };
 		CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLTaggedPointAnnotation.m; sourceTree = "<group>"; };
+		CC11FD591C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueCardPresenterTestCase.m; sourceTree = "<group>"; };
 		CC4BFED41C6FA0D200728483 /* VenueLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenueLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4BFED81C6FA0D200728483 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC4BFEDA1C6FA0D200728483 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				CC4BFEF11C6FA0D200728483 /* VenueLocatorTests.m */,
 				CC4BFEF31C6FA0D200728483 /* Info.plist */,
+				CC11FD591C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m */,
 			);
 			path = VenueLocatorTests;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC11FD5A1C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m in Sources */,
 				CC4BFEF21C6FA0D200728483 /* VenueLocatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

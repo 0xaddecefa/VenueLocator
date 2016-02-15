@@ -16,4 +16,6 @@
 @property (nonatomic, readonly) IBOutlet UITextView *addressTextView;
 @property (nonatomic, readonly) IBOutlet UILabel *distanceLabel;
 
+
+- (instancetype)initForTest;
 @end
