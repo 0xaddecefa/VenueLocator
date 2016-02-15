@@ -22,7 +22,6 @@
 
     self.presenter = [[VLVenueCardPresenter alloc] initForTest];
 
-
     self.validInput = @{
                         @"id" : @"1234",
                         @"name" : @"test",
@@ -31,8 +30,6 @@
                                     @"formattedAddress" : @[@"Address 1", @"Address 2"]
                                 }
                         };
-    
-
     
 }
 
