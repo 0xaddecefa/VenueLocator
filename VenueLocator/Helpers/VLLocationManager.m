@@ -52,8 +52,11 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    self.latestUserLocation = newLocation;
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *location = DYNAMIC_CAST(locations.lastObject, CLLocation);
+    if (!self.latestUserLocation || [location distanceFromLocation:self.latestUserLocation] > self.locationManager.desiredAccuracy * 10.0) {
+        self.latestUserLocation = location;
+    }
 }
 
 #pragma mark - Lazy getters
