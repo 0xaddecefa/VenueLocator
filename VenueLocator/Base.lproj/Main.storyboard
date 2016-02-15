@@ -133,6 +133,7 @@
                     <navigationItem key="navigationItem" title="Find Venue" id="Nia-za-3fn"/>
                     <connections>
                         <outlet property="collectionView" destination="PvK-TM-aMu" id="7BR-N0-TeH"/>
+                        <outlet property="collectionViewBottomContraint" destination="Syi-oK-dZt" id="eHz-hm-KBz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

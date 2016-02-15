@@ -16,6 +16,7 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 @interface VLSearchViewController () <VLPresenterDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) VLSearchPresenter *presenter;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *collectionViewBottomContraint;
 @end
 
 @implementation VLSearchViewController
@@ -23,6 +24,33 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardFrameChanged:(NSNotification *) notification {
+    NSDictionary *userinfo = notification.userInfo;
+    CGRect endFrame;
+    [[userinfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&endFrame];
+    endFrame = [self.view convertRect:endFrame fromView:nil];
+    NSNumber *durationValue = DYNAMIC_CAST(userinfo[UIKeyboardAnimationDurationUserInfoKey], NSNumber);
+    CGFloat animationDuration = [durationValue floatValue];
+    
+    self.collectionViewBottomContraint.constant = 5 + (self.view.bounds.size.height - endFrame.origin.y);
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+}
+
 
 #pragma mark - UICollectionViewDataSource
 
