@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VLPresenterProtocol.h"
 #import "VLSearchSourceProtocol.h"
+#import "VLLocationSourceProtocol.h"
 
 #import "VLVenue.h"
 #import "VLVenueCardCell.h"
@@ -19,6 +20,7 @@
 @property (nonatomic, weak) id<VLPresenterDelegate> delegate;
 @property (nonatomic, readonly) SearchPresenterState state;
 @property (nonatomic, strong) id<VLSearchSourceProtocol> source;
+@property (nonatomic, strong) id<VLLocationSourceProtocol> locationSource;
 
 - (void)search:(NSString *)query;
 

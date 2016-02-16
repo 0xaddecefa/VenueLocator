@@ -42,7 +42,8 @@
 		CC761B7E1C716A5100613EDC /* VLVenueDetailMapPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */; };
 		CCB23D6B1C7320EE00D6CAF9 /* VLMockSearchSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */; };
 		CCB23D6D1C73210100D6CAF9 /* Protocols in Resources */ = {isa = PBXBuildFile; fileRef = CCB23D6C1C73210100D6CAF9 /* Protocols */; };
-		CCB23D6F1C732B4500D6CAF9 /* VLSearchPresenterSuccessfullSearchTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterSuccessfullSearchTestCase.m */; };
+		CCB23D6F1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m */; };
+		CCB23D731C7336DD00D6CAF9 /* VLMockLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D721C7336DD00D6CAF9 /* VLMockLocationSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +136,10 @@
 		CCB23D691C7320EE00D6CAF9 /* VLMockSearchSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMockSearchSource.h; sourceTree = "<group>"; };
 		CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMockSearchSource.m; sourceTree = "<group>"; };
 		CCB23D6C1C73210100D6CAF9 /* Protocols */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Protocols; sourceTree = "<group>"; };
-		CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterSuccessfullSearchTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLSearchPresenterSuccessfullSearchTestCase.m; sourceTree = "<group>"; };
+		CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLSearchPresenterTestCase.m; sourceTree = "<group>"; };
+		CCB23D701C7330AE00D6CAF9 /* VLLocationSourceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VLLocationSourceProtocol.h; sourceTree = "<group>"; };
+		CCB23D711C7336DD00D6CAF9 /* VLMockLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMockLocationSource.h; sourceTree = "<group>"; };
+		CCB23D721C7336DD00D6CAF9 /* VLMockLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMockLocationSource.m; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +237,7 @@
 				CC4BFEF11C6FA0D200728483 /* VenueLocatorTests.m */,
 				CC4BFEF31C6FA0D200728483 /* Info.plist */,
 				CC11FD591C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m */,
+				CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m */,
 			);
 			path = VenueLocatorTests;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			children = (
 				CCB23D631C731FE700D6CAF9 /* VLSearchSourceProtocol.h */,
 				CCB23D641C731FE700D6CAF9 /* VLVenueDetailSourceProtocol.h */,
+				CCB23D701C7330AE00D6CAF9 /* VLLocationSourceProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -344,6 +350,8 @@
 				CCB23D6C1C73210100D6CAF9 /* Protocols */,
 				CCB23D691C7320EE00D6CAF9 /* VLMockSearchSource.h */,
 				CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */,
+				CCB23D711C7336DD00D6CAF9 /* VLMockLocationSource.h */,
+				CCB23D721C7336DD00D6CAF9 /* VLMockLocationSource.m */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -576,10 +584,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB23D6F1C732B4500D6CAF9 /* VLSearchPresenterSuccessfullSearchTestCase.m in Sources */,
+				CCB23D6F1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m in Sources */,
 				CC11FD5A1C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m in Sources */,
 				CC4BFEF21C6FA0D200728483 /* VenueLocatorTests.m in Sources */,
 				CCB23D6B1C7320EE00D6CAF9 /* VLMockSearchSource.m in Sources */,
+				CCB23D731C7336DD00D6CAF9 /* VLMockLocationSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

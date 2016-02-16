@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "VLSearchSourceProtocol.h"
 
-@interface VLMockSearchSource : NSObject <VLSearchSourceProtocol>
+typedef NS_ENUM(NSUInteger, VLMockSearchSourceState) {
+    VLMockSearchSourceShouldReturnData,
+    VLMockSearchSourceShouldReturnEmpty,
+    VLMockSearchSourceShouldReturnError,
+};
 
+@interface VLMockSearchSource : NSObject <VLSearchSourceProtocol>
+@property (nonatomic, assign) VLMockSearchSourceState state;
 @end

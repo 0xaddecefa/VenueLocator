@@ -7,22 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import "VLLocationSourceProtocol.h"
 
-
-typedef enum LocationManagerStatus {
-    LocationManagerStatusNotDetermined = 0,
-    LocationManagerStatusDenied,
-    LocationManagerStatusAuthorized,
-} _LocationManagerStatus;
-
-@interface VLLocationManager : NSObject
-
-@property (nonatomic, readonly) enum LocationManagerStatus status;
-@property (nonatomic, readonly) CLLocation *latestUserLocation;
+@interface VLLocationManager : NSObject <VLLocationSourceProtocol>
 
 + (VLLocationManager *)sharedInstance;
-- (void)startUpdating;
-- (void)stopUpdating;
 
 @end

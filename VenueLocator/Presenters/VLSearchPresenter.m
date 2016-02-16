@@ -8,7 +8,6 @@
 
 #import "VLSearchPresenter.h"
 #import "VLVenueList.h"
-#import "VLLocationManager.h"
 
 @interface VLSearchPresenter()
 
@@ -23,7 +22,6 @@
     self = [super init];
     
     if (self) {
-        [[VLLocationManager sharedInstance] startUpdating];
     }
     
     return self;
@@ -32,22 +30,26 @@
 - (void)search:(NSString *)query {
     self.state = SearchPresenterStateLoading;
 
-    CLLocationCoordinate2D userLocation = [VLLocationManager sharedInstance].latestUserLocation.coordinate;
+    CLLocationCoordinate2D userLocation = [self.locationSource getLatestUserLocation].coordinate;
     
     __block VLSearchPresenter * blockSelf = self;
+    [self.delegate presentLoadingIndicator];
     [self.source searchForQuery: query
                                         latitude: userLocation.latitude
                                        longitude: userLocation.longitude
                                           radius: 30000
                                  successCallback: ^(VLVenueList * _Nullable venueList) {
+                                     [blockSelf.delegate hideLoadingIndicator];
                                      blockSelf.model = venueList;
                                  } errorCallback: ^(NSError * _Nullable error) {
+                                     [blockSelf setModel:nil];
+                                     [blockSelf.delegate hideLoadingIndicator];
                                  }];
 }
 
 - (void)setModel:(VLBaseModel *)model {
     self.venueList = DYNAMIC_CAST(model, VLVenueList);
-    self.state = self.venueList.items.count > 0 ? SearchPresenterStateHasContent : SearchPresenterStateEmpty;
+    self.state = self.venueList ? (self.venueList.items.count > 0 ? SearchPresenterStateHasContent : SearchPresenterStateEmpty) : SearchPresenterStateError;
 }
 
 - (VLBaseModel *)getModel {

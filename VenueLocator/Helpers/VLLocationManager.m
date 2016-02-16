@@ -12,7 +12,7 @@
 @interface VLLocationManager() <CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *latestUserLocation;
-@property (nonatomic, assign) enum LocationManagerStatus status;
+@property (nonatomic, assign) LocationSourceStatus status;
 @end
 
 @implementation VLLocationManager
@@ -26,6 +26,15 @@
         sharedInstance = [VLLocationManager new];
     });
     return sharedInstance;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self startUpdating];
+    }
+    
+    return self;
 }
 
 - (void)startUpdating {
@@ -42,12 +51,12 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if(status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) {
         [self.locationManager startUpdatingLocation];
-        self.status = LocationManagerStatusAuthorized;
+        self.status = LocationSourceStatusAuthorized;
     } else {
         if(status == kCLAuthorizationStatusNotDetermined) {
-            self.status = LocationManagerStatusNotDetermined;
+            self.status = LocationSourceStatusNotDetermined;
         } else {
-            self.status = LocationManagerStatusDenied;
+            self.status = LocationSourceStatusDenied;
         }
     }
 }
@@ -71,5 +80,14 @@
     return _locationManager;
 }
 
+#pragma mark - LocationSourceProtocol
+
+- (CLLocation *)getLatestUserLocation {
+    return self.latestUserLocation;
+}
+
+- (LocationSourceStatus)getStatus {
+    return self.status;
+}
 
 @end
