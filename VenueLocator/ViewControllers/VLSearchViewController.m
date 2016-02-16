@@ -23,7 +23,6 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
 @property (nonatomic, strong) IBOutlet VLStateView *stateView;
 
-@property (nonatomic, assign) CGFloat animationDelay;
 @end
 
 @implementation VLSearchViewController
@@ -51,29 +50,20 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     CGFloat animationDuration = [durationValue floatValue];
     
     self.collectionViewBottomContraint.constant = 5 + (self.view.bounds.size.height - endFrame.origin.y);
-    
 
     [UIView animateWithDuration: animationDuration
-                          delay: self.animationDelay
+                          delay: 0.0f
                         options: UIViewAnimationOptionBeginFromCurrentState
                      animations: ^{
-                         [self.view layoutIfNeeded];
+                         [self.collectionView.collectionViewLayout invalidateLayout];
                      }
                      completion:^(BOOL finished) {
-                         [self.collectionView.collectionViewLayout invalidateLayout];
                      }];
 }
 
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        self.animationDelay = [context transitionDuration];
-    }
-                                 completion: ^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        self.animationDelay = 0.0f;
-    }];
     
     [self.collectionView.collectionViewLayout invalidateLayout];
 
