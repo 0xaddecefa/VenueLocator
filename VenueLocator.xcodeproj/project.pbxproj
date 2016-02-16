@@ -40,6 +40,8 @@
 		CC761B781C716A2500613EDC /* VLVenueDetailInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B771C716A2500613EDC /* VLVenueDetailInfoPresenter.m */; };
 		CC761B7B1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */; };
 		CC761B7E1C716A5100613EDC /* VLVenueDetailMapPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */; };
+		CCB23D6B1C7320EE00D6CAF9 /* VLMockSearchSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */; };
+		CCB23D6D1C73210100D6CAF9 /* Protocols in Resources */ = {isa = PBXBuildFile; fileRef = CCB23D6C1C73210100D6CAF9 /* Protocols */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +129,11 @@
 		CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailDescriptionPresenter.m; sourceTree = "<group>"; };
 		CC761B7C1C716A5100613EDC /* VLVenueDetailMapPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailMapPresenter.h; sourceTree = "<group>"; };
 		CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailMapPresenter.m; sourceTree = "<group>"; };
-		CCB23D5C1C730D1300D6CAF9 /* VLSearchSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLSearchSourceProtocol.h; sourceTree = "<group>"; };
-		CCB23D5D1C7319BA00D6CAF9 /* VLVenueDetailSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailSourceProtocol.h; sourceTree = "<group>"; };
+		CCB23D631C731FE700D6CAF9 /* VLSearchSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLSearchSourceProtocol.h; sourceTree = "<group>"; };
+		CCB23D641C731FE700D6CAF9 /* VLVenueDetailSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailSourceProtocol.h; sourceTree = "<group>"; };
+		CCB23D691C7320EE00D6CAF9 /* VLMockSearchSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMockSearchSource.h; sourceTree = "<group>"; };
+		CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMockSearchSource.m; sourceTree = "<group>"; };
+		CCB23D6C1C73210100D6CAF9 /* Protocols */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Protocols; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +227,7 @@
 		CC4BFEF01C6FA0D200728483 /* VenueLocatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				CCB23D651C7320EE00D6CAF9 /* Mocks */,
 				CC4BFEF11C6FA0D200728483 /* VenueLocatorTests.m */,
 				CC4BFEF31C6FA0D200728483 /* Info.plist */,
 				CC11FD591C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m */,
@@ -241,7 +247,7 @@
 		CC4BFF151C6FB01D00728483 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CCB23D5B1C730BD600D6CAF9 /* Protocols */,
+				CCB23D621C731FE700D6CAF9 /* Protocols */,
 				CC4BFF341C700EB200728483 /* VLAPIClient.h */,
 				CC4BFF351C700EB200728483 /* VLAPIClient.m */,
 				CC4BFF251C6FBF5900728483 /* VLBaseModel.h */,
@@ -321,13 +327,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		CCB23D5B1C730BD600D6CAF9 /* Protocols */ = {
+		CCB23D621C731FE700D6CAF9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CCB23D5C1C730D1300D6CAF9 /* VLSearchSourceProtocol.h */,
-				CCB23D5D1C7319BA00D6CAF9 /* VLVenueDetailSourceProtocol.h */,
+				CCB23D631C731FE700D6CAF9 /* VLSearchSourceProtocol.h */,
+				CCB23D641C731FE700D6CAF9 /* VLVenueDetailSourceProtocol.h */,
 			);
-			name = Protocols;
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CCB23D651C7320EE00D6CAF9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CCB23D6C1C73210100D6CAF9 /* Protocols */,
+				CCB23D691C7320EE00D6CAF9 /* VLMockSearchSource.h */,
+				CCB23D6A1C7320EE00D6CAF9 /* VLMockSearchSource.m */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		EAF7243A4E1F4566EFC4E096 /* Frameworks */ = {
@@ -461,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB23D6D1C73210100D6CAF9 /* Protocols in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +576,7 @@
 			files = (
 				CC11FD5A1C71DEC200CB4073 /* VLVenueCardPresenterTestCase.m in Sources */,
 				CC4BFEF21C6FA0D200728483 /* VenueLocatorTests.m in Sources */,
+				CCB23D6B1C7320EE00D6CAF9 /* VLMockSearchSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

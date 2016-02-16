@@ -27,8 +27,6 @@
 
 }
 
-
-
 #pragma mark - lazy getter
 
 - (VLVenueDetailPresenter *)presenter {
