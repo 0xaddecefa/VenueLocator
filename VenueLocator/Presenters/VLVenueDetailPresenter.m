@@ -10,8 +10,6 @@
 #import "VLVenueDetailPresenter.h"
 #import "VLVenue.h"
 
-#import "VLAPIClient.h"
-
 
 static NSString *kInfoCellReuseIdentifier = @"VenueDetailInfo";
 static NSString *kDescriptionCellReuseIdentifier = @"VenueDetailDescription";
@@ -27,7 +25,7 @@ static NSString *kMapCellReuseIdentifier = @"VenueDetailMap";
 - (void)setModel:(VLBaseModel *)model {
     self.venue = DYNAMIC_CAST(model, VLVenue);
     __block VLVenueDetailPresenter *blockSelf = self;
-    [[VLAPIClient sharedInstance] loadVenueWithID:self.venue.identifier
+    [self.source loadVenueWithID:self.venue.identifier
                                   successCallback:^(VLCompleteVenue * _Nullable completeVenue) {
                                       blockSelf.venue = completeVenue;
                                       [blockSelf.delegate refresh];

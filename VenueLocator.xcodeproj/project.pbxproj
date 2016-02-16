@@ -127,6 +127,8 @@
 		CC761B7A1C716A3E00613EDC /* VLVenueDetailDescriptionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailDescriptionPresenter.m; sourceTree = "<group>"; };
 		CC761B7C1C716A5100613EDC /* VLVenueDetailMapPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailMapPresenter.h; sourceTree = "<group>"; };
 		CC761B7D1C716A5100613EDC /* VLVenueDetailMapPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLVenueDetailMapPresenter.m; sourceTree = "<group>"; };
+		CCB23D5C1C730D1300D6CAF9 /* VLSearchSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLSearchSourceProtocol.h; sourceTree = "<group>"; };
+		CCB23D5D1C7319BA00D6CAF9 /* VLVenueDetailSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLVenueDetailSourceProtocol.h; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 		CC4BFF151C6FB01D00728483 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CCB23D5B1C730BD600D6CAF9 /* Protocols */,
 				CC4BFF341C700EB200728483 /* VLAPIClient.h */,
 				CC4BFF351C700EB200728483 /* VLAPIClient.m */,
 				CC4BFF251C6FBF5900728483 /* VLBaseModel.h */,
@@ -316,6 +319,15 @@
 				CC11FD571C718E3400CB4073 /* VLTaggedPointAnnotation.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CCB23D5B1C730BD600D6CAF9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CCB23D5C1C730D1300D6CAF9 /* VLSearchSourceProtocol.h */,
+				CCB23D5D1C7319BA00D6CAF9 /* VLVenueDetailSourceProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		EAF7243A4E1F4566EFC4E096 /* Frameworks */ = {

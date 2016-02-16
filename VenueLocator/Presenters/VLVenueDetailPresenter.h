@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "VLPresenterProtocol.h"
+#import "VLVenueDetailSourceProtocol.h"
 
 @interface VLVenueDetailPresenter : NSObject <VLPresenterProtocol>
-
+@property (nonatomic, strong) id<VLVenueDetailSourceProtocol> source;
 @property (nonatomic, weak) id<VLPresenterDelegate> delegate;
 
 - (NSUInteger)numberOfRows;

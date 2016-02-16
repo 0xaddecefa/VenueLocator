@@ -8,22 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "VLVenueList.h"
-#import "VLCompleteVenue.h"
+#import "VLSearchSourceProtocol.h"
+#import "VLVenueDetailSourceProtocol.h"
 
-@interface VLAPIClient : NSObject
+@interface VLAPIClient : NSObject <VLSearchSourceProtocol, VLVenueDetailSourceProtocol>
 
 + (instancetype _Nullable)sharedInstance;
-
-- (void)searchForQuery: (NSString * _Nullable)query
-              latitude: (double)latitude
-             longitude: (double)longitude
-                radius: (double)radius
-       successCallback: (void (^ __nullable)(VLVenueList * _Nullable))successCallback
-         errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
-
-- (void)loadVenueWithID: (NSString * __nullable)venueID
-        successCallback: (void (^ __nullable)(VLCompleteVenue * _Nullable))successCallback
-          errorCallback: (void (^ __nullable)(NSError  * _Nullable ))errorCallback;
 
 @end

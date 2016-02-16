@@ -11,6 +11,8 @@
 #import "VLVenueDetailDescriptionTableViewCell.h"
 #import "VLVenueDetailMapTableViewCell.h"
 
+#import "VLAPIClient.h"
+
 @interface VLVenueDetailViewController () <VLPresenterDelegate>
 @property (nonatomic, strong) VLVenueDetailPresenter *presenter;
 @end
@@ -32,6 +34,7 @@
 - (VLVenueDetailPresenter *)presenter {
     if (!_presenter) {
         _presenter = [VLVenueDetailPresenter new];
+        _presenter.source = [VLAPIClient sharedInstance];
         _presenter.delegate = self;
     }
     

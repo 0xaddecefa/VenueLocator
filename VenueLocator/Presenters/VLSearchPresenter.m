@@ -8,7 +8,6 @@
 
 #import "VLSearchPresenter.h"
 #import "VLVenueList.h"
-#import "VLApiClient.h"
 #import "VLLocationManager.h"
 
 @interface VLSearchPresenter()
@@ -36,7 +35,7 @@
     CLLocationCoordinate2D userLocation = [VLLocationManager sharedInstance].latestUserLocation.coordinate;
     
     __block VLSearchPresenter * blockSelf = self;
-    [[VLAPIClient sharedInstance] searchForQuery: query
+    [self.source searchForQuery: query
                                         latitude: userLocation.latitude
                                        longitude: userLocation.longitude
                                           radius: 30000

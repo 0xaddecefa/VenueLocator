@@ -8,7 +8,7 @@
 
 #import "VLSearchViewController.h"
 #import "VLSearchPresenter.h"
-
+#import "VLAPIClient.h"
 #import "VLVenueCardCell.h"
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
@@ -154,6 +154,7 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 - (VLSearchPresenter *)presenter {
     if (!_presenter) {
         _presenter = [VLSearchPresenter new];
+        _presenter.source = [VLAPIClient sharedInstance];
         _presenter.delegate = self;
     }
     
