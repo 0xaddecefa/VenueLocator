@@ -27,10 +27,6 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
 @implementation VLSearchViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChanged:) name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -173,6 +169,7 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
         case SearchPresenterStateEmpty:
             stateViewState = VLStateViewStateEmpty;
             break;
+        case SearchPresenterStateLocationNotDetermined:
         case SearchPresenterStateError:
             stateViewState = VLStateViewStateError;
             break;
@@ -189,9 +186,12 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self.presenter search:searchText];
 }
-
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self.presenter search:searchBar.text];
+}
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
 }
+
 
 @end

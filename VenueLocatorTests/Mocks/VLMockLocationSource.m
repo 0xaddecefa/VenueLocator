@@ -22,5 +22,6 @@
     }
 }
 
+- (void)startUpdating {}
 
 @end

@@ -20,4 +20,6 @@ typedef NS_ENUM(NSUInteger, LocationSourceStatus) {
 @required
 - (LocationSourceStatus)getStatus;
 - (CLLocation *)getLatestUserLocation;
+- (void)startUpdating;
+
 @end

@@ -31,7 +31,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self startUpdating];
+        self.status = LocationSourceStatusNotDetermined;
+        
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
+            [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+            [self startUpdating];
+        }
     }
     
     return self;

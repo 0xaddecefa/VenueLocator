@@ -28,6 +28,10 @@
 }
 
 - (void)search:(NSString *)query {
+    if ([self.locationSource getStatus]== LocationSourceStatusNotDetermined) {
+        [self.locationSource startUpdating];
+        return;
+    }
     if ([self.locationSource getLatestUserLocation]) {
         
         self.state = SearchPresenterStateLoading;
