@@ -55,16 +55,23 @@
     [self.presenter search:@""];
 }
 
+- (void)testDisabledLocationInputProcessed {
+    self.locationState = VLMockLocationSourceNoLocation;
+   
+    [self.presenter search:@""];
+}
+
+
 
 
 #pragma mark - Delete callbacks
 - (void)refresh {
     
-    XCTAssertTrue(self.presentLoadingIndicatorCalled);
-    XCTAssertTrue(self.hideLoadingIndicatorCalled);
-
     if (self.state == VLMockSearchSourceShouldReturnData &&
         self.locationState == VLMockLocationSourceLocation) {
+        XCTAssertTrue(self.presentLoadingIndicatorCalled);
+        XCTAssertTrue(self.hideLoadingIndicatorCalled);
+
         XCTAssertNotNil([self.presenter getModel]);
         XCTAssertTrue([[self.presenter getModel] isKindOfClass:[VLVenueList class]]);
         VLVenueList *venueList = (VLVenueList *)[self.presenter getModel];
@@ -75,14 +82,29 @@
 
     if (self.state == VLMockSearchSourceShouldReturnEmpty &&
         self.locationState == VLMockLocationSourceLocation) {
+        XCTAssertTrue(self.presentLoadingIndicatorCalled);
+        XCTAssertTrue(self.hideLoadingIndicatorCalled);
+        XCTAssertTrue(self.presentStateCalled);
+        
         XCTAssertNotNil([self.presenter getModel]);
         XCTAssertTrue([[self.presenter getModel] isKindOfClass:[VLVenueList class]]);
         VLVenueList *venueList = (VLVenueList *)[self.presenter getModel];
         
         XCTAssertNotNil([venueList items]);
         XCTAssertTrue([self.presenter numberOfVenues] == 0);
+
+        XCTAssertNotNil([self.presenter getModel]);
+   }
+    
+    if (self.locationState == VLMockLocationSourceNoLocation) {
+        XCTAssertFalse(self.presentLoadingIndicatorCalled);
+        XCTAssertFalse(self.hideLoadingIndicatorCalled);
         XCTAssertTrue(self.presentStateCalled);
+        
+        XCTAssertNil([self.presenter getModel]);
+       
     }
+    
     self.didComplete = YES;
 
     

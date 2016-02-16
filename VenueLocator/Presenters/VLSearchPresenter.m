@@ -28,23 +28,29 @@
 }
 
 - (void)search:(NSString *)query {
-    self.state = SearchPresenterStateLoading;
-
-    CLLocationCoordinate2D userLocation = [self.locationSource getLatestUserLocation].coordinate;
-    
-    __block VLSearchPresenter * blockSelf = self;
-    [self.delegate presentLoadingIndicator];
-    [self.source searchForQuery: query
-                                        latitude: userLocation.latitude
-                                       longitude: userLocation.longitude
-                                          radius: 30000
-                                 successCallback: ^(VLVenueList * _Nullable venueList) {
-                                     [blockSelf.delegate hideLoadingIndicator];
-                                     blockSelf.model = venueList;
-                                 } errorCallback: ^(NSError * _Nullable error) {
-                                     [blockSelf setModel:nil];
-                                     [blockSelf.delegate hideLoadingIndicator];
-                                 }];
+    if ([self.locationSource getLatestUserLocation]) {
+        
+        self.state = SearchPresenterStateLoading;
+        
+        CLLocationCoordinate2D userLocation = [self.locationSource getLatestUserLocation].coordinate;
+        
+        __block VLSearchPresenter * blockSelf = self;
+        [self.delegate presentLoadingIndicator];
+        [self.source searchForQuery: query
+                           latitude: userLocation.latitude
+                          longitude: userLocation.longitude
+                             radius: 30000
+                    successCallback: ^(VLVenueList * _Nullable venueList) {
+                        [blockSelf.delegate hideLoadingIndicator];
+                        blockSelf.model = venueList;
+                    } errorCallback: ^(NSError * _Nullable error) {
+                        [blockSelf setModel:nil];
+                        [blockSelf.delegate hideLoadingIndicator];
+                    }];
+    } else {
+        self.state = SearchPresenterStateError;
+        [self.delegate refresh];
+    }
 }
 
 - (void)setModel:(VLBaseModel *)model {
