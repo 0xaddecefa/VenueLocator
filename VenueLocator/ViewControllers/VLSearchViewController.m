@@ -12,6 +12,7 @@
 #import "VLLocationManager.h"
 
 #import "VLVenueCardCell.h"
+#import "VLStateView.h"
 
 static NSString *kCellReuseIdentifier = @"VenueCardCell";
 
@@ -19,6 +20,8 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 @property (nonatomic, strong) VLSearchPresenter *presenter;
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *collectionViewBottomContraint;
+
+@property (nonatomic, strong) IBOutlet VLStateView *stateView;
 
 @property (nonatomic, assign) CGFloat animationDelay;
 @end
@@ -145,11 +148,6 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
     return CGSizeMake(width, 160);
 }
 
-//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(    NSTimeInterval)duration {
-//    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-//    [self.collectionView reloadData];
-//}
-
 #pragma mark - lazy getters
 
 
@@ -171,15 +169,30 @@ static NSString *kCellReuseIdentifier = @"VenueCardCell";
 }
 
 - (void)presentLoadingIndicator {
-
+    self.stateView.state = VLStateViewStateLoading;
 }
 
 - (void)hideLoadingIndicator {
-    
+    self.stateView.state = VLStateViewStateNone;
 }
 
 - (void)presentStateViewForState:(SearchPresenterState)state {
+    VLStateViewState stateViewState = VLStateViewStateNone;
     
+    switch (state) {
+        case SearchPresenterStateEmpty:
+            stateViewState = VLStateViewStateEmpty;
+            break;
+        case SearchPresenterStateError:
+            stateViewState = VLStateViewStateError;
+            break;
+        default:
+            break;
+            
+    }
+
+    self.stateView.state = stateViewState;
+
 }
 
 #pragma mark - UISearchBarDelegate

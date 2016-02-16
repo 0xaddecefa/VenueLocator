@@ -44,6 +44,7 @@
 		CCB23D6D1C73210100D6CAF9 /* Protocols in Resources */ = {isa = PBXBuildFile; fileRef = CCB23D6C1C73210100D6CAF9 /* Protocols */; };
 		CCB23D6F1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D6E1C732B4500D6CAF9 /* VLSearchPresenterTestCase.m */; };
 		CCB23D731C7336DD00D6CAF9 /* VLMockLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D721C7336DD00D6CAF9 /* VLMockLocationSource.m */; };
+		CCB23D761C734D0200D6CAF9 /* VLStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB23D751C734D0200D6CAF9 /* VLStateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		CCB23D701C7330AE00D6CAF9 /* VLLocationSourceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VLLocationSourceProtocol.h; sourceTree = "<group>"; };
 		CCB23D711C7336DD00D6CAF9 /* VLMockLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLMockLocationSource.h; sourceTree = "<group>"; };
 		CCB23D721C7336DD00D6CAF9 /* VLMockLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLMockLocationSource.m; sourceTree = "<group>"; };
+		CCB23D741C734D0200D6CAF9 /* VLStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLStateView.h; sourceTree = "<group>"; };
+		CCB23D751C734D0200D6CAF9 /* VLStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLStateView.m; sourceTree = "<group>"; };
 		E2A3E4C18F0DD0256A0E33F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,6 +318,8 @@
 				CC761B6E1C71583B00613EDC /* VLVenueDetailDescriptionTableViewCell.m */,
 				CC761B701C71584C00613EDC /* VLVenueDetailMapTableViewCell.h */,
 				CC761B711C71584C00613EDC /* VLVenueDetailMapTableViewCell.m */,
+				CCB23D741C734D0200D6CAF9 /* VLStateView.h */,
+				CCB23D751C734D0200D6CAF9 /* VLStateView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				CC4BFF361C700EB200728483 /* VLAPIClient.m in Sources */,
 				CC4BFF271C6FBF5900728483 /* VLBaseModel.m in Sources */,
 				CC761B6C1C71582100613EDC /* VLVenueDetailInfoTableViewCell.m in Sources */,
+				CCB23D761C734D0200D6CAF9 /* VLStateView.m in Sources */,
 				CC761B781C716A2500613EDC /* VLVenueDetailInfoPresenter.m in Sources */,
 				CC4BFF211C6FBE6E00728483 /* VLVenue.m in Sources */,
 				CC11FD551C718A2400CB4073 /* VLDistanceAnnotation.m in Sources */,

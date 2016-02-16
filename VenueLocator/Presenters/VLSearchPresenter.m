@@ -48,7 +48,7 @@
                         [blockSelf.delegate hideLoadingIndicator];
                     }];
     } else {
-        self.state = SearchPresenterStateError;
+        self.state = SearchPresenterStateLocationNotDetermined;
         [self.delegate refresh];
     }
 }
@@ -76,6 +76,7 @@
                 break;
                 
             case SearchPresenterStateError:
+            case SearchPresenterStateLocationNotDetermined:
                 [self.delegate presentStateViewForState:_state];
                 break;
             default:

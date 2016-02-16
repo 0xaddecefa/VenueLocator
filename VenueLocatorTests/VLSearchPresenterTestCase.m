@@ -78,6 +78,10 @@
         
         XCTAssertNotNil([venueList items]);
         XCTAssertTrue([self.presenter numberOfVenues] == 1);
+
+        XCTAssertNotNil([self.presenter venueAtIndex:0]);
+        XCTAssertTrue([[self.presenter venueAtIndex:0] isKindOfClass:[VLVenue class]]);
+        XCTAssertNil([self.presenter venueAtIndex:1]);
     }
 
     if (self.state == VLMockSearchSourceShouldReturnEmpty &&
@@ -93,7 +97,7 @@
         XCTAssertNotNil([venueList items]);
         XCTAssertTrue([self.presenter numberOfVenues] == 0);
 
-        XCTAssertNotNil([self.presenter getModel]);
+        XCTAssertNil([self.presenter venueAtIndex:0]);
    }
     
     if (self.locationState == VLMockLocationSourceNoLocation) {

@@ -118,14 +118,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qoY-af-tkA"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAa-OT-urn" userLabel="State View" customClass="VLStateView">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Ime-4U-1Sp"/>
+                                    <constraint firstAttribute="height" constant="240" id="XyF-vl-4Df"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gAa-OT-urn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Mi-pF-e5A"/>
                             <constraint firstItem="hf3-SQ-c5N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Dou-M8-aBM"/>
                             <constraint firstAttribute="trailing" secondItem="PvK-TM-aMu" secondAttribute="trailing" constant="5" id="EqU-p7-wF0"/>
                             <constraint firstItem="PvK-TM-aMu" firstAttribute="top" secondItem="hf3-SQ-c5N" secondAttribute="bottom" id="O5P-cL-LZB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PvK-TM-aMu" secondAttribute="bottom" id="Syi-oK-dZt"/>
                             <constraint firstAttribute="trailing" secondItem="hf3-SQ-c5N" secondAttribute="trailing" id="WWy-ZG-fGq"/>
+                            <constraint firstItem="gAa-OT-urn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dIK-VB-ImK"/>
                             <constraint firstItem="PvK-TM-aMu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="hUf-8Q-LKc"/>
                             <constraint firstItem="hf3-SQ-c5N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wk1-EG-aiF"/>
                         </constraints>
@@ -134,6 +144,7 @@
                     <connections>
                         <outlet property="collectionView" destination="PvK-TM-aMu" id="7BR-N0-TeH"/>
                         <outlet property="collectionViewBottomContraint" destination="Syi-oK-dZt" id="eHz-hm-KBz"/>
+                        <outlet property="stateView" destination="gAa-OT-urn" id="VJ7-t2-Phk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
